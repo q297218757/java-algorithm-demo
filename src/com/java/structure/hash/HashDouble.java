@@ -1,4 +1,4 @@
-package com.java.structure;
+package com.java.structure.hash;
 
 /**
  * 再哈希法

@@ -1,5 +1,10 @@
-package com.java.structure;
-import com.java.structure.SortLink.LinkNode;
+package com.java.structure.link;
+import com.java.structure.link.SortLink;
+import com.java.structure.link.SortLink.LinkNode;
+
+/**
+ * 哈希链表
+ */
 public class HashLink {
     private SortLink[] hashArray;//数组中存放链表
     private int arraySize;
@@ -40,5 +45,9 @@ public class HashLink {
         int hashVal = hashFunction(key);
         LinkNode node = hashArray[hashVal].find(key);
         return node;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(9&3);
     }
 }

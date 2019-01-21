@@ -1,5 +1,8 @@
-package com.java.structure;
+package com.java.structure.tree;
 
+/**
+ * 红黑树(数组实现)
+ */
 public class RedBlackTree {
     RBNode root ;
 

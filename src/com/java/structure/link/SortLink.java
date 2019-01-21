@@ -1,7 +1,7 @@
-package com.java.structure;
+package com.java.structure.link;
 
 /**
- *  有序链表
+ *  有序链表(单向链表)
  */
 public class SortLink {
     private LinkNode first;
@@ -75,5 +75,10 @@ public class SortLink {
         public void displayLink(){
             System.out.println(iData + " ");
         }
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println(3/2);
     }
 }
