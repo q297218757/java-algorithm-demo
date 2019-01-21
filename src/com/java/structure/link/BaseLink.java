@@ -6,7 +6,7 @@ import java.util.concurrent.BlockingDeque;
  * 单向链表
  */
 public class BaseLink {
-    //根节点
+    //根结点
     Node root;
     //链表长度
     int size;

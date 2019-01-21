@@ -6,7 +6,7 @@ package com.java.structure.link;
 public class DoubleLink {
     //头结点
     Node head;
-    //尾节点
+    //尾结点
     Node tail;
     //链表长度
     int size;

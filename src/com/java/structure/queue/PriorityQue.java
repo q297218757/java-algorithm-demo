@@ -1,5 +1,9 @@
 package com.java.structure.queue;
 
+/**
+ *  优先队列
+ *  使用数组实现的单向优先队列
+ */
 public class PriorityQue {
     private int maxSize;
     private int[] priQueArray;

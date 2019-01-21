@@ -46,6 +46,7 @@ public class PriorityQueue {
             while (i<QueueArray[index==-1?(maxSize-1):index]){
                 QueueArray[index+1] = QueueArray[index];
                 if(index==-1){
+                    //
                     index =maxSize-1;
                 }
                 index--;
