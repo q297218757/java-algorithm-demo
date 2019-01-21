@@ -1,4 +1,4 @@
-package com.java.simple;
+package com.java.algorithm.simple;
 
 /**
  *  尾部的零

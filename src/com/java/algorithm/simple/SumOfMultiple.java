@@ -1,4 +1,4 @@
-package com.java.simple;
+package com.java.algorithm.simple;
 
 /**
  * 找得出A和B区间的3的倍数的所有数相加的和

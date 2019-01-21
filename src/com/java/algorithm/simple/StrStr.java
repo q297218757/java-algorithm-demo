@@ -1,4 +1,4 @@
-package com.java.simple;
+package com.java.algorithm.simple;
 
 import java.util.ArrayList;
 import java.util.List;

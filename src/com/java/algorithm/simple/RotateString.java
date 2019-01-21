@@ -1,4 +1,4 @@
-package com.java.simple;
+package com.java.algorithm.simple;
 
 /**
  * 旋转字符串

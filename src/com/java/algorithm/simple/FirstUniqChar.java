@@ -1,8 +1,7 @@
-package com.java.simple;
+package com.java.algorithm.simple;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeMap;
 
 /**
  *  第一个落单的数

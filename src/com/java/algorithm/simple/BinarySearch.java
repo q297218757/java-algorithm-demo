@@ -1,7 +1,4 @@
-package com.java.simple;
-
-import java.math.BigInteger;
-import java.util.concurrent.atomic.AtomicInteger;
+package com.java.algorithm.simple;
 
 /**
  *  二分查找
