@@ -20,8 +20,8 @@
  #### 困难难度
  
  ### 数据结构
- - 哈希 
- - 堆
- - 树
- - 链表
- 
+ - 哈希[https://github.com/q297218757/java-algorithm-demo/tree/master/src/com/java/structure/hash]
+ - 堆[https://github.com/q297218757/java-algorithm-demo/tree/master/src/com/java/structure/heap]
+ - 树[https://github.com/q297218757/java-algorithm-demo/tree/master/src/com/java/structure/tree]
+ - 链表[https://github.com/q297218757/java-algorithm-demo/tree/master/src/com/java/structure/link]
+ - 队列[https://github.com/q297218757/java-algorithm-demo/tree/master/src/com/java/structure/queue]
