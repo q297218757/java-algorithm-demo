@@ -1,7 +1,8 @@
 # java-algorithm-demo
 ## 该项目内容分为领扣上面的算法题解法和数据结构。
 
-### 算法题
+## 导航
+### 算法题解法
  #### 简单难度
   - 二分查找
   - 第一个落单的数
@@ -26,3 +27,14 @@
  - [树](https://github.com/q297218757/java-algorithm-demo/tree/master/src/com/java/structure/tree)
  - [链表](https://github.com/q297218757/java-algorithm-demo/tree/master/src/com/java/structure/link)
  - [队列](https://github.com/q297218757/java-algorithm-demo/tree/master/src/com/java/structure/queue)
+ 
+ ### 排序算法
+  - [简单排序](https://github.com/q297218757/java-algorithm-demo/sort/)
+    - 冒泡
+    - 插入   
+    - 选择  
+  - [高级]
+    - 希尔
+    - 桶
+    - 快速
+    
