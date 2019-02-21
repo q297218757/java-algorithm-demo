@@ -29,11 +29,11 @@
  - [队列](https://github.com/q297218757/java-algorithm-demo/tree/master/src/com/java/structure/queue)
  
  ### 排序算法
-  - [简单排序](https://github.com/q297218757/java-algorithm-demo/sort/)
+  - [简单排序](https://github.com/q297218757/java-algorithm-demo/sort/general/)
     - 冒泡
     - 插入   
     - 选择  
-  - [高级]
+  - [高级排序](https://github.com/q297218757/java-algorithm-demo/sort/senior/)
     - 希尔
     - 桶
     - 快速
