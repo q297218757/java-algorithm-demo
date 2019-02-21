@@ -1,4 +1,4 @@
-package com.java.sort;
+package com.java.sort.general;
 
 /**
  * 冒泡排序

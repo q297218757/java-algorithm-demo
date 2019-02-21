@@ -1,4 +1,4 @@
-package com.java.sort;
+package com.java.sort.senior;
 
 /**
  * 桶排序
