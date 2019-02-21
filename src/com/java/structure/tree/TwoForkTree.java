@@ -117,6 +117,7 @@ public class TwoForkTree {
             middleOrder(node.leftNode);
             System.out.println(node.data);
             middleOrder(node.rightNode);
+
         }
     }
     /*

@@ -31,7 +31,7 @@ public class HashLink {
     public void insert(LinkNode node){
         int key = node.getKey();
         int hashVal = hashFunction(key);
-        hashArray[hashVal].insert(node);//直接往链表中添加即可
+        hashArray[hashVal].insert(node.getKey());//直接往链表中添加即可
     }
 
     public LinkNode delete(int key){

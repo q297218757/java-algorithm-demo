@@ -11,7 +11,8 @@ public class SortLink {
     public boolean isEmpty(){
         return (first == null);
     }
-    public void insert(LinkNode node){
+    public void insert(int num){
+        LinkNode node = new LinkNode(num);
         int key = node.getKey();
         LinkNode previous = null;
         LinkNode current = first;
@@ -21,6 +22,7 @@ public class SortLink {
         }
         if(previous == null){
             first = node;
+            first.next =current;
         }else{
             node.next = current;
             previous.next = node;
@@ -79,6 +81,12 @@ public class SortLink {
     }
 
     public static void main(String[] args) {
-        System.out.println(3/2);
+        SortLink sortLink = new SortLink();
+        sortLink.insert(6);
+        sortLink.insert(8);
+        sortLink.insert(9);
+        sortLink.insert(1);
+        sortLink.insert(2);
+        sortLink.displayLink();
     }
 }

@@ -2,13 +2,13 @@ package com.java.structure.heap;
 
 /**
  *  基本的堆（用数组来实现）
- *  堆就是完全二叉树，除了最后一层一一定要满
- *  堆是若排序的，不支持遍历
+ *  堆就是完全二叉树，除了最后一层以外一定要满
+ *  堆是弱排序的，不支持遍历（只能保证父子节点的值.0排序）
  *  用数组实现堆的几个特性：
  *  1.结点的左子结点是 2*index+1，
  *  2.结点的右子结点是 2*index+2，
  *  3. 结点的父结点是 （index-1）/2
- *  4.堆中的每一个结点的关键字都大于（或等于）这个结点的子结点的关键字。
+ *  4.堆中的每一个结点的值都大于（或等于）这个结点的子结点的值。
  */
 public class BaseHeap {
     //实现堆的数组
@@ -115,6 +115,7 @@ public class BaseHeap {
                 largeChildIndex = leftChildIndex;
             }
 
+            //头结点比两个子节点都大
             if(top.getiData() >= heapArray[largeChildIndex].getiData()) {
                 break;
             }
@@ -141,15 +142,14 @@ public class BaseHeap {
 
     public static void main(String[] args) {
         BaseHeap baseHeap = new BaseHeap(10);
-        baseHeap.insert(34);
-        baseHeap.insert(68);
-        baseHeap.insert(43);
-        baseHeap.insert(55);
-        baseHeap.insert(10);
-        baseHeap.insert(78);
-        baseHeap.remove();
-        baseHeap.insert(82);
-
+        int[] array = {4,2,8,9,5,7,6,1,3,10,3};
+        for (int n:array){
+            baseHeap.insert(n);
+        }
+        for (int i =0;i<baseHeap.currentSize;i++){
+            Node node = baseHeap.remove();
+            System.out.print(node.iData+"->");
+        }
 
     }
 }

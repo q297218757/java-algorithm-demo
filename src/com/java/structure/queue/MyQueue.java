@@ -94,6 +94,7 @@ public class MyQueue {
         myQueue.insert("w");
         myQueue.insert("e");
         myQueue.insert("r");
+        myQueue.remove();
         myQueue.insert("t");
         myQueue.insert("y");
         myQueue.insert("u");

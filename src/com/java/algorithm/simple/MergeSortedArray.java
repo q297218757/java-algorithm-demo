@@ -40,9 +40,4 @@ public class MergeSortedArray {
         return C;
     }
 
-    public static void main(String[] args) {
-        int[] B = {1};
-        int[] A = {1};
-        int[] C =  mergeSortedArray(A,B);
-    }
 }

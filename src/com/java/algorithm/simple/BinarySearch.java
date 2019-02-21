@@ -85,21 +85,24 @@ public class BinarySearch {
      * @return
      */
     public static int binarySearch2(int[] nums, int target){
-        int middle = searchRecursive(nums,0,nums.length,target);
-        //找到第一个匹配的数的下标
-        for (int j =middle;j>=0;j--){
-            if(nums[j] == nums[middle]){
-                middle =j;
-            }else {
-                break;
+        if(nums.length == 0 ){
+            return 0;
+        }else {
+            int middle = searchRecursive(nums, 0, nums.length-1, target);
+            //找到第一个匹配的数的下标
+            for (int j = middle; j >= 0; j--) {
+                if (nums[j] == nums[middle]) {
+                    middle = j;
+                } else {
+                    break;
+                }
             }
+            return middle;
         }
-        return middle;
     }
     public static int searchRecursive(int[] array,int low,int hight,int target){
-            if(low<hight){
-                int middle =(low+hight)/2;
-
+        int middle =(low+hight)/2;
+            if(middle != low && middle != hight){
                 int middlevalue = array[middle];
                 if(middlevalue==target){
                     return middle;
@@ -115,5 +118,13 @@ public class BinarySearch {
                     return -1;
                 }
             }
+    }
+
+    public static void main(String[] args) {
+        int[] ints = {1,2,3,4,5,6};
+//         int[] ints = {9};
+       System.out.println(binarySearch2(ints,9));
+
+//        System.out.println((6+6)/2);
     }
 }
