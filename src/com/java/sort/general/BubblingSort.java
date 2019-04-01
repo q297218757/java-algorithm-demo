@@ -20,24 +20,34 @@ package com.java.sort.general;
  */
 public class BubblingSort {
     public static int[] sort(int[] array){
-        int temp;
-        //判断数组是否排序好了
-        boolean falg ;
-        //这个循环代表总共需要比较多少轮
-        for (int i = 1; i< array.length;i++){
-            //这个循环代表每一轮需要比较
-            falg  = true;
-            for (int k = 0;k<array.length-i;k++){
-                if(array[k] > array[k+1]){
-                    temp = array[k];
-                    array[k] = array[k+1];
-                    array[k+1] = temp;
-                    falg = false;
+//        int temp;
+//        //判断数组是否排序好了
+//        boolean falg ;
+//        //这个循环代表总共需要比较多少轮
+//        for (int i = 1; i< array.length;i++){
+//            //这个循环代表每一轮需要比较
+//            falg  = true;
+//            for (int k = 0;k<array.length-i;k++){
+//                if(array[k] < array[k+1]){
+//                    temp = array[k];
+//                    array[k] = array[k+1];
+//                    array[k+1] = temp;
+//                    falg = false;
+//                }
+//            }
+//            //这轮循环中没有发生位置变化,证明已经排列好了
+//            if(falg){
+//                return array;
+//            }
+//        }
+        for (int i = 0;i < array.length;i++){
+            for (int j = i;j<array.length-1;j++){
+                int temp ;
+                if(array[j] > array[j+1]){
+                    temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
                 }
-            }
-            //这轮循环中没有发生位置变化,证明已经排列好了
-            if(falg){
-                return array;
             }
         }
         return array;

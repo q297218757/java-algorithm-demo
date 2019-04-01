@@ -1,5 +1,8 @@
 package com.java.structure.tree;
 
+import com.java.sort.senior.QuickSort;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,30 +26,74 @@ import java.util.List;
  * 4. 重复(02)、(03)步，直到森林中只剩一棵树为止，该树即为所求得的哈夫曼树。
  */
 public class HuffmanTree {
+    //跟节点
+    Node root;
+    //树的实际大小
+    private int size = 0;
 
     //哈夫曼树结点
     public class Node{
-        String name;
-        double weight;
-        Node left;
-        Node right;
+        int weight; //权值
+        Node left;  //左结点
+        Node right; //右结点
 
-        public Node(String name, double weight) {
-            this.name = name;
+        public Node(int weight) {
             this.weight = weight;
         }
 
         @Override
         public String toString() {
             return "Node{" +
-                    "name='" + name + '\'' +
                     ", weight=" + weight +
                     '}';
         }
     }
 
-    public void sort(List<Node> Nodes){
-        
+    //给权的权值排序(快速排序)
+    private   List<Node> sort(List<Node> Nodes){
+        QuickSort quickSort = new QuickSort();
+        List<Integer> list = new ArrayList<>();
+        for (Node node:Nodes){
+            list.add(node.weight);
+        }
+        List<Integer> list1 =  quickSort.sort(list);
+        return Nodes;
+    }
+
+    public List<Node> m(List<Node> nodes){
+        nodes = sort(nodes);
+        if( nodes.size() == 1){
+           return nodes;
+        }else {
+            nodes.add(merge(nodes.get(0),nodes.get(1)));
+            nodes.remove(0);
+            nodes.remove(0);
+            return  m(nodes);
+        }
+
+    }
+
+    //两个节点结合成一棵树
+    private Node  merge(Node left,Node right){
+        Node node = new Node(left.weight+right.weight);
+        node.left = left;
+        node.right = right;
+        return node;
+    }
+
+    public  void test() {
+        List<Node> nodes = new ArrayList<>();
+        nodes.add(new Node(15));
+        nodes.add(new Node(6));
+        nodes.add(new Node(5));
+        nodes.add(new Node(8));
+        nodes.add(new Node(7));
+        List list = m(nodes);
+    }
+
+    public static void main(String[] args) {
+        HuffmanTree huffmanTree = new HuffmanTree();
+        huffmanTree.test();
     }
 }
 

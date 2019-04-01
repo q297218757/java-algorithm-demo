@@ -1,7 +1,12 @@
 package com.java.structure.heap;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+
 /**
- *  基本的堆（用数组来实现）
+ *  基本的堆（用静态数组来实现）
  *  堆就是完全二叉树，除了最后一层以外一定要满
  *  堆是弱排序的，不支持遍历（只能保证父子节点的值.0排序）
  *  用数组实现堆的几个特性：
@@ -9,6 +14,13 @@ package com.java.structure.heap;
  *  2.结点的右子结点是 2*index+2，
  *  3. 结点的父结点是 （index-1）/2
  *  4.堆中的每一个结点的值都大于（或等于）这个结点的子结点的值。
+ *  5.堆的长度固定
+ *
+ *  动态数组实现堆的优点：
+ *  1.结构简单，实现容易
+ *  缺点：
+ *  1.堆的大小固定，不灵活
+ *
  */
 public class BaseHeap {
     //实现堆的数组
@@ -17,6 +29,7 @@ public class BaseHeap {
     private int maxSize;
     //实际的最大容量
     private int currentSize;
+
 
     public BaseHeap(int maxSize) {
         heapArray = new Node[maxSize];
@@ -141,15 +154,22 @@ public class BaseHeap {
     }
 
     public static void main(String[] args) {
-        BaseHeap baseHeap = new BaseHeap(10);
-        int[] array = {4,2,8,9,5,7,6,1,3,10,3};
-        for (int n:array){
-            baseHeap.insert(n);
+//        BaseHeap baseHeap = new BaseHeap(10);
+//        int[] array = {4,2,8,9,5,7,6,1,3,10,3};
+//        for (int n:array){
+//            baseHeap.insert(n);
+//        }
+//        for (int i =0;i<baseHeap.currentSize;i++){
+//            Node node = baseHeap.remove();
+//            System.out.print(node.iData+"->");
+//        }
+        Random random = new Random();
+        BaseHeap baseHeap =new BaseHeap(1000000);
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < 1000000; i++) {
+            baseHeap.insert(random.nextInt(9999999)+1);
         }
-        for (int i =0;i<baseHeap.currentSize;i++){
-            Node node = baseHeap.remove();
-            System.out.print(node.iData+"->");
-        }
-
+        long endTime = System.currentTimeMillis();
+        System.out.println("运行时间:" + (endTime - startTime) + "ms");
     }
 }

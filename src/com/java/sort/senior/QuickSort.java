@@ -1,11 +1,13 @@
 package com.java.sort.senior;
 
+import java.util.*;
+
 /**
  * 快速排序
  */
 public class QuickSort {
 
-    public void swap(int[] array,int j,int k){
+    private void swap(int[] array,int j,int k){
         int temp = array[j];
         array[j] = array[k];
         array[k] = temp;
@@ -18,22 +20,18 @@ public class QuickSort {
     3）从j开始向前搜索，即由后开始向前搜索(j--)，找到第一个小于key的值A[j]，将A[j]和A[i]互换；
     4）从i开始向后搜索，即由前开始向后搜索(i++)，找到第一个大于key的A[i]，将A[i]和A[j]互换；
     5）重复第3、4步，直到i=j； (3,4步中，没找到符合条件的值，即3中A[j]不小于key,4中A[i]不大于key的时候改变j、i的值，使得j=j-1，i=i+1，直至找到为止。找到符合条件的值，进行交换的时候i， j指针位置不变。另外，i==j这一过程一定正好是i+或j-完成的时候，此时令循环结束
-
      一次遍历基准可能会发生多次变换
      */
     class Low{
-        int m =0;
         //排序的同时返回基准坐标
         private int sort(int[] array,int left,int right){
-            int k = left;
-            int i = left;
-            int j = right;
-            int temp;
+            int k = left;  //哨兵
+            int i = left; //左起始点
+            int j = right; //右起始点
             while (j > i) {
                 //第一步
                 while (j > i ) {
                     if (array[j] < array[k]) {
-                        m++;
                         swap(array, j, k);
                         k = j;
                         break;
@@ -43,7 +41,6 @@ public class QuickSort {
                 //第二步
                 while (j > i) {
                     if (array[i] > array[k]) {
-                        m++;
                         swap(array, i, k);
                         k = i;
                         break;
@@ -54,32 +51,19 @@ public class QuickSort {
             return k;
         }
 
-        //排序第一次基准结点后的左边子数组
-        private void leftSort(int[] array,int i,int j){
-            if(j <= i){
+        public void  recQuickSort(int[] array,int left,int right){
+            if(left > right){
                 return;
             }else {
-                int k = sort(array, i, j);
-                leftSort(array, 0, k - 1);
+                int k = sort(array,left,right);
+                recQuickSort(array,left,k-1);// 对上一轮排序(切分)时，基准元素左边的子数组进行递归
+                recQuickSort(array,k+1,right);// 对上一轮排序(切分)时，基准元素右边的子数组进行递归
             }
         }
-
-        //排序基准结点后的右子数组
-        private void rightSort(int[] array,int i,int j){
-            if(j <= i){
-                return;
-            }else {
-                int k = sort(array, i, j);
-                rightSort(array, k+1, array.length-1);
-            }
-        }
-
         //对外提供的排序方法,里面包括了第一次排序
         public void recQuickSort(int[] array){
-            //第一次的基准点是相同的
-            int k = sort(array,0,array.length-1);
-            leftSort(array,0,k-1);
-            rightSort(array,k+1,array.length-1);
+            //第一次的基准点是相同的(为0)
+            recQuickSort(array,0,array.length-1);
         }
 
    }
@@ -94,7 +78,8 @@ public class QuickSort {
            if(right <= left){
                return;//终止递归
            }else{
-               int partition = partitionIt(array,left,right);
+               Low low = new Low();
+              int partition = partitionIt(array,left,right);
                recQuickSort(array,left,partition-1);// 对上一轮排序(切分)时，基准元素左边的子数组进行递归
                recQuickSort(array,partition+1,right);// 对上一轮排序(切分)时，基准元素右边的子数组进行递归
            }
@@ -128,16 +113,47 @@ public class QuickSort {
        }
     }
 
+    public List<Integer> sort(List<Integer> list){
+        int[] array = new int[list.size()];
+        int n =0;
+        for (int i:list){
+            array[n++] = i;
+        }
+        QuickSort.Low quickSort = new QuickSort().new Low();
+        quickSort.recQuickSort(array);
+        List<Integer> sortList = new ArrayList<>();
+
+        for (int i:array){
+            sortList.add(i);
+        }
+        return sortList;
+    }
+
    public static void main(String[] args) {
         QuickSort.Low low = new QuickSort().new Low();
         int[] array = {6,1,2,7,9,3,4,5,10,8,20,15,16,14};
-        low.recQuickSort(array);
-        System.out.println("low方式元素交换次数："+low.m);
+//        int[] array = {9,8,7,6,5,4,3,2,1};
+       low.recQuickSort(array);
 
-       int[] array1 = {6,1,2,7,9,3,4,5,10,8,20,15,16,14};
-        QuickSort.Puls puls = new QuickSort().new Puls();
-        puls.sort(array1);
-        System.out.println("plus方法元素交换次数："+puls.m);
+//
+//        int[] array1 = {6,1,2,7,9,3,4,5,10,8,20,15,16,14};
+//        QuickSort.Puls puls = new QuickSort().new Puls();
+//        puls.sort(array);
 
+//       Map<String,List> map = new HashMap<>();
+//       List list = new ArrayList();
+//           map.put("1",list);
+//       if(map.get("2") == null){
+//           System.out.println("空");
+//       }
+//       List<List<List<Double>>> ringsList = new ArrayList<>();
+//        Map<String,List<List<Double>>> map1 = new HashMap();
+//       Iterator iterator = map1.keySet().iterator();
+//       while (iterator.hasNext()){
+//           ringsList.add(map1.get(iterator.next()));
+//       }
+       int i = 1;
+       float d = 2;
+       System.out.println(i/d);
     }
 }

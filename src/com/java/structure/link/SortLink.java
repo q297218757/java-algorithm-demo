@@ -14,8 +14,8 @@ public class SortLink {
     public void insert(int num){
         LinkNode node = new LinkNode(num);
         int key = node.getKey();
-        LinkNode previous = null;
-        LinkNode current = first;
+        LinkNode previous = null; //上一个结点
+        LinkNode current = first; //当前结点
         while(current !=  null && current.getKey() < key){
             previous = current;
             current = current.next;

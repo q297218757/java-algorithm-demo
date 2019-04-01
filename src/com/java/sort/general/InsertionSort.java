@@ -15,22 +15,21 @@ package com.java.sort.general;
  */
 public class InsertionSort {
     /*
-    自己的方法（没能完成）
-    思路：创建一个新数组，每轮排序找到要插入的位置，插入
+    自己的方法
      */
     public static int[] sort(int[] array){
-        int[] temparray = new int[array.length];
-        temparray[0] = array[0];
+        int num;//这轮要插入的数据
+        int index;
         for (int i = 1;i < array.length;i++){
-            for (int k = 0;k < i;k++){
-                if(array[i] < temparray[k] ){
-                    if(k == 0){
-                        temparray[k] = 0;
-                    }
-                }
+            num = array[i];
+            index = i;
+            while (index > 0 && num < array[index-1]){
+                    array[index] = array[index-1];
+                    index--;
             }
+            array[index] = num;
         }
-        return array;
+       return array;
     }
 
     //网上大佬的方法
@@ -52,6 +51,6 @@ public class InsertionSort {
     }
     public static void main(String[] args) {
         int[] i = {4, 2, 8, 9, 5, 7, 6, 13};
-        System.out.println(sortPlus(i));
+        System.out.println(sort(i));
     }
 }

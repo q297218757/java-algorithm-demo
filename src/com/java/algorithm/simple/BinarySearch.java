@@ -1,5 +1,7 @@
 package com.java.algorithm.simple;
 
+import java.util.Set;
+
 /**
  *  二分查找
  *  给定一个排序的整数数组（升序）和一个要查找的整数target，用O(logn)的时间查找到target第一次出现的下标（从0开始）
@@ -81,7 +83,7 @@ public class BinarySearch {
     /**
      * @param nums 整数数组
      * @param target 要查找的整数
-     * 改进过的算法(代码少，但是运行时间要长一点  )
+     * 改进过的算法(代码少，但是运行时间要长一点)
      * @return
      */
     public static int binarySearch2(int[] nums, int target){

@@ -236,9 +236,9 @@ public class RedBlackTree {
     public static void main(String[] args) {
         RedBlackTree RBNode = new RedBlackTree();
         RBNode.insert(11);
-        RBNode.insert(2);
-        RBNode.insert(14);
         RBNode.insert(7);
+        RBNode.insert(14);
+        RBNode.insert(2);
         RBNode.insert(1);
         RBNode.insert(15);
         RBNode.insert(5);

@@ -80,7 +80,7 @@ public class MaxSubArray {
             if (dp[i-1] <= 0 ){
                 //前面的<0,直接丢弃
                 dp[i] = nums[i];
-                temp = i;//记录起始为止
+                temp = i;//记录起始位置
             }else {
                 dp[i] = nums[i] +dp[i-1];
             }
@@ -121,6 +121,6 @@ public class MaxSubArray {
        int[] array ={-2,2,-3,4,-1,2,1,-5,3};
 //
 //        System.out.println(maxSubArray.maxSubArray(array));
-        System.out.println(maxSubArray3(array));
+        System.out.println(maxSubArray2(array));
     }
 }
